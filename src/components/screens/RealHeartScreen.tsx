@@ -11,20 +11,16 @@ export default function RealHeartScreen({ onNext }: { onNext: () => void }) {
         animate={{ opacity: 1, y: 0 }}
         className="glass-card rounded-3xl p-8 max-w-xl w-full shadow-2xl relative text-center flex flex-col items-center"
       >
-        {/* Pulsing red heart */}
-        <motion.div
-          animate={{
-            scale: [1, 1.25, 1],
-          }}
-          transition={{
-            repeat: Infinity,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="mb-8 cursor-pointer drop-shadow-[0_0_25px_rgba(239,68,68,0.75)]"
-        >
-          <Heart size={120} fill="#ef4444" className="text-red-500" />
-        </motion.div>
+        {/* Pulsing real beating anatomical heart GIF */}
+        <div className="flex justify-center mb-8">
+          <div className="rounded-3xl overflow-hidden border-4 border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.7)] w-44 h-44 bg-black/10">
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Beating_Heart.gif" 
+              alt="Real Beating Heart" 
+              className="w-full h-full object-cover animate-pulse" 
+            />
+          </div>
+        </div>
 
         <h1 className="text-2xl md:text-3xl font-black mb-4 text-red-500 dark:text-red-400 drop-shadow-sm leading-relaxed">
           Jab tumne bola ki achhe se invite nai kiya...
