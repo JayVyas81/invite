@@ -10,19 +10,11 @@ export default function ReviewScreen({ onNext }: { onNext: () => void }) {
   const [finalState, setFinalState] = useState<"none" | "too-late" | "accepted">("none");
 
   const sendData = async (action: string) => {
-
     const fashionStrategy = localStorage.getItem("fashionStrategy") || "None";
-    let targetUrl = "/send_mail.php";
-    
-    // Auto-detect local development server at port 8000 (running in root folder)
-    if (typeof window !== "undefined" && window.location.hostname === "localhost") {
-      targetUrl = "http://localhost:8000/public/send_mail.php";
-    }
-
-    console.log("Sending data to PHP endpoint:", targetUrl);
+    console.log("Sending data to Discord via secure API route...");
 
     try {
-      const res = await fetch(targetUrl, {
+      const res = await fetch("/api/discord", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -33,9 +25,9 @@ export default function ReviewScreen({ onNext }: { onNext: () => void }) {
         }),
       });
       const result = await res.json();
-      console.log("Email result:", result);
+      console.log("Discord Notification Status:", result);
     } catch (err) {
-      console.error("Error sending email:", err);
+      console.error("Error sending Discord notification:", err);
     }
   };
 
