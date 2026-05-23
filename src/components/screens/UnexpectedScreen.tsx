@@ -19,12 +19,12 @@ export default function UnexpectedScreen({ onNext }: { onNext: () => void }) {
         animate={{ opacity: 1, scale: 1 }}
         className="glass-card rounded-3xl p-8 max-w-xl w-full shadow-2xl relative text-center"
       >
-        {/* Surprise box / funny cat GIF */}
+        {/* Surprise box opening GIF */}
         <div className="flex justify-center mb-6">
-          <div className="rounded-3xl overflow-hidden border-4 border-purple-400 shadow-xl w-44 h-44">
+          <div className="rounded-3xl overflow-hidden border-4 border-purple-400 shadow-xl w-44 h-44 bg-white/20">
             <img 
-              src="https://media.tenor.com/zc5tGYgASGUAAAAC/icecream-national-chocolate-ice-cream-day.gif" 
-              alt="Happy Cat Ice Cream" 
+              src="https://media.giphy.com/media/l0Exd2T89yHPA6c3e/giphy.gif" 
+              alt="Surprise Present Box" 
               className="w-full h-full object-cover" 
             />
           </div>
