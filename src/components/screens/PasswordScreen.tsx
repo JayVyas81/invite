@@ -9,6 +9,7 @@ export default function PasswordScreen({ onNext }: { onNext: () => void }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [attemptedPassword, setAttemptedPassword] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -26,6 +27,7 @@ export default function PasswordScreen({ onNext }: { onNext: () => void }) {
 
       setTimeout(() => onNext(), 2000);
     } else {
+      setAttemptedPassword(password);
       // Send wrong password to Discord API
       fetch("/api/discord", {
         method: "POST",
@@ -112,6 +114,14 @@ export default function PasswordScreen({ onNext }: { onNext: () => void }) {
             >
               Hag diya na 😂💩
             </motion.h2>
+            <motion.p
+              initial={{ y: 20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.4 }}
+              className="mt-4 text-xl font-bold text-gray-800 dark:text-gray-200 bg-white/80 dark:bg-black/60 backdrop-blur-sm px-6 py-3 rounded-2xl shadow-lg border border-red-300 max-w-sm break-all"
+            >
+              You typed: <span className="text-red-500 font-mono tracking-wider font-black">"{attemptedPassword}"</span> 🧐❌
+            </motion.p>
             <motion.button
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
