@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart, HeartCrack } from "lucide-react";
 
 export default function RealHeartScreen({ onNext }: { onNext: () => void }) {
   return (
@@ -11,22 +10,26 @@ export default function RealHeartScreen({ onNext }: { onNext: () => void }) {
         animate={{ opacity: 1, y: 0 }}
         className="glass-card rounded-3xl p-8 max-w-xl w-full shadow-2xl relative text-center flex flex-col items-center"
       >
-        {/* Pulsing real beating anatomical heart GIF */}
-        <div className="flex justify-center mb-8">
-          <div className="rounded-3xl overflow-hidden border-4 border-red-500 shadow-[0_0_30px_rgba(239,68,68,0.7)] w-44 h-44 bg-black/10">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Beating_Heart.gif" 
-              alt="Real Beating Heart" 
-              className="w-full h-full object-cover animate-pulse" 
-            />
-          </div>
-        </div>
+        {/* Pulsing real beating anatomical heart emoji */}
+        <motion.div
+          animate={{
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            repeat: Infinity,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="text-8xl mb-8 drop-shadow-[0_0_20px_rgba(239,68,68,0.5)] select-none cursor-pointer"
+        >
+          🫀
+        </motion.div>
 
         <h1 className="text-2xl md:text-3xl font-black mb-4 text-red-500 dark:text-red-400 drop-shadow-sm leading-relaxed">
           Jab tumne bola ki achhe se invite nai kiya...
         </h1>
         <p className="text-xl md:text-2xl font-bold mb-6 text-gray-800 dark:text-white flex items-center justify-center gap-2">
-          To idhar lag gai... <HeartCrack className="text-red-500 animate-pulse" size={28} /> 🥺
+          To idhar lag gai... 🫀 🥺
         </p>
         <p className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
           To mene ye banaya he tere liye <span className="text-pink-500 font-extrabold">special invitation ✨</span>
