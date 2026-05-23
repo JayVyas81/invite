@@ -13,6 +13,7 @@ export default function ReviewScreen({ onNext }: { onNext: () => void }) {
     const fashionStrategy = localStorage.getItem("fashionStrategy") || "None";
     const excitedAdd = localStorage.getItem("excitedAdd") || "None";
     const unexpectedFeel = localStorage.getItem("unexpectedFeel") || "None";
+    const gussaSelection = localStorage.getItem("gussaSelection") || "None";
     console.log("Sending data to Discord via secure API route...");
 
     try {
@@ -25,6 +26,7 @@ export default function ReviewScreen({ onNext }: { onNext: () => void }) {
           fashionStrategy,
           excitedAdd,
           unexpectedFeel,
+          gussaSelection,
           reviewText: `${review} (Action decided: ${action})`,
         }),
       });

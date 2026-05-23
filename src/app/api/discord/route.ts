@@ -8,6 +8,7 @@ export async function POST(request: Request) {
       fashionStrategy, 
       excitedAdd, 
       unexpectedFeel, 
+      gussaSelection,
       reviewText 
     } = await request.json();
 
@@ -41,6 +42,11 @@ export async function POST(request: Request) {
         title: "💌 New Meetup Invitation Response!",
         color: 0xff69b4, // Sleek pink color
         fields: [
+          {
+            name: "🍼 Subeh Subeh Reaction",
+            value: gussaSelection || "None provided",
+            inline: false
+          },
           {
             name: "👗 Fashion Strategy",
             value: fashionStrategy || "None provided",

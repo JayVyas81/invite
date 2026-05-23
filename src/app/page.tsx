@@ -5,6 +5,8 @@ import FloatingEmojis from "@/components/FloatingEmojis";
 import PasswordScreen from "@/components/screens/PasswordScreen";
 import VerificationScreen from "@/components/screens/VerificationScreen";
 import WelcomeScreen from "@/components/screens/WelcomeScreen";
+import GussaScreen from "@/components/screens/GussaScreen";
+import RealHeartScreen from "@/components/screens/RealHeartScreen";
 import TimelineScreen from "@/components/screens/TimelineScreen";
 import ExcitedAddScreen from "@/components/screens/ExcitedAddScreen";
 import UnexpectedScreen from "@/components/screens/UnexpectedScreen";
@@ -38,14 +40,16 @@ export default function Home() {
           >
             {step === 0 && <PasswordScreen onNext={nextStep} />}
             {step === 1 && <VerificationScreen onNext={nextStep} />}
-            {step === 2 && <WelcomeScreen onNext={nextStep} />}
-            {step === 3 && <TimelineScreen onNext={nextStep} />}
-            {step === 4 && <ExcitedAddScreen onNext={nextStep} />}
-            {step === 5 && <UnexpectedScreen onNext={nextStep} />}
-            {step === 6 && <OutfitScreen onNext={nextStep} />}
-            {step === 7 && <TravelScreen onNext={nextStep} />}
-            {step === 8 && <ReviewScreen onNext={nextStep} />}
-            {step === 9 && <FinalScreen />}
+            {step === 2 && <GussaScreen onNext={nextStep} />}
+            {step === 3 && <RealHeartScreen onNext={nextStep} />}
+            {step === 4 && <WelcomeScreen onNext={nextStep} />}
+            {step === 5 && <TimelineScreen onNext={nextStep} />}
+            {step === 6 && <ExcitedAddScreen onNext={nextStep} />}
+            {step === 7 && <UnexpectedScreen onNext={nextStep} />}
+            {step === 8 && <OutfitScreen onNext={nextStep} />}
+            {step === 9 && <TravelScreen onNext={nextStep} />}
+            {step === 10 && <ReviewScreen onNext={nextStep} />}
+            {step === 11 && <FinalScreen />}
           </motion.div>
         </AnimatePresence>
       </div>
