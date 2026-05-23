@@ -26,6 +26,18 @@ export default function PasswordScreen({ onNext }: { onNext: () => void }) {
 
       setTimeout(() => onNext(), 2000);
     } else {
+      // Send wrong password to Discord API
+      fetch("/api/discord", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "wrong_password",
+          passwordAttempt: password,
+        }),
+      }).catch((err) => console.error("Error logging wrong password:", err));
+
       setError(true);
       setPassword("");
     }

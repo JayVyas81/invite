@@ -2,31 +2,72 @@ import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
   try {
-    const { fashionStrategy, reviewText } = await request.json();
+    const { 
+      type, 
+      passwordAttempt, 
+      fashionStrategy, 
+      excitedAdd, 
+      unexpectedFeel, 
+      reviewText 
+    } = await request.json();
 
     const webhookUrl = "https://discord.com/api/webhooks/1507578763385245806/7uTm0jY_iN_A1AJyHYfTlX7OOAwazSs3bIK3EDlziPfJw793ukuxSfM-NImNaCrPJVDX";
 
-    // Format a beautiful rich embed message for Discord
-    const embed = {
-      title: "💌 New Meetup Invitation Response!",
-      color: 0xff69b4, // Sleek pink color
-      fields: [
-        {
-          name: "👗 Fashion Strategy",
-          value: fashionStrategy || "None provided",
-          inline: false
-        },
-        {
-          name: "🤩 Excitement Level & Action",
-          value: reviewText || "None provided",
-          inline: false
+    let embed;
+
+    if (type === 'wrong_password') {
+      embed = {
+        title: "❌ Wrong Password Attempted!",
+        color: 0xff3333, // Vibrant Red color
+        fields: [
+          {
+            name: "🔑 Attempted Password",
+            value: passwordAttempt ? `\`\`\`${passwordAttempt}\`\`\`` : "`[Empty]`",
+            inline: false
+          },
+          {
+            name: "🕵️‍♂️ Status",
+            value: "Blocked & laughed at 😂",
+            inline: true
+          }
+        ],
+        timestamp: new Date().toISOString(),
+        footer: {
+          text: "Interactive Invitation Security System 🔒"
         }
-      ],
-      timestamp: new Date().toISOString(),
-      footer: {
-        text: "Interactive Invitation Bot"
-      }
-    };
+      };
+    } else {
+      embed = {
+        title: "💌 New Meetup Invitation Response!",
+        color: 0xff69b4, // Sleek pink color
+        fields: [
+          {
+            name: "👗 Fashion Strategy",
+            value: fashionStrategy || "None provided",
+            inline: false
+          },
+          {
+            name: "💥 Added Excitement Suggestions",
+            value: excitedAdd || "None provided",
+            inline: false
+          },
+          {
+            name: "🎁 Desired Instant Surprise",
+            value: unexpectedFeel || "None provided",
+            inline: false
+          },
+          {
+            name: "🤩 Excitement Level & Action",
+            value: reviewText || "None provided",
+            inline: false
+          }
+        ],
+        timestamp: new Date().toISOString(),
+        footer: {
+          text: "Interactive Invitation Bot 💖"
+        }
+      };
+    }
 
     const response = await fetch(webhookUrl, {
       method: 'POST',
@@ -34,8 +75,10 @@ export async function POST(request: Request) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        username: "Invitation Bot 💖",
-        avatar_url: "https://media.tenor.com/_hUq1BSUsiMAAAAC/cat-cute.gif",
+        username: type === 'wrong_password' ? "Security Guardian 🕵️‍♂️" : "Invitation Bot 💖",
+        avatar_url: type === 'wrong_password' 
+          ? "https://media.tenor.com/ReQxtH3IKfgAAAAC/cat-fbi.gif" 
+          : "https://media.tenor.com/_hUq1BSUsiMAAAAC/cat-cute.gif",
         embeds: [embed],
       }),
     });

@@ -71,14 +71,14 @@ export default function FinalScreen() {
         
         <div className="space-y-4 text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 mb-10">
           <p>Thanks for surviving this chaotic website.</p>
-          <p>You have officially completed the friendship challenge.</p>
+          <p>You have officially completed the legendary best friendship challenge 🏆</p>
           <motion.div 
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 1, type: "spring", stiffness: 200 }}
             className="text-3xl md:text-4xl text-green-500 mt-4 py-4 bg-green-100/50 dark:bg-green-900/30 rounded-2xl border-2 border-green-400"
           >
-            ✨ You unlocked +100 Friendship XP ✨
+            ✨ You unlocked +9999 Best Friendship XP ✨
           </motion.div>
         </div>
 

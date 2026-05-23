@@ -6,6 +6,8 @@ import PasswordScreen from "@/components/screens/PasswordScreen";
 import VerificationScreen from "@/components/screens/VerificationScreen";
 import WelcomeScreen from "@/components/screens/WelcomeScreen";
 import TimelineScreen from "@/components/screens/TimelineScreen";
+import ExcitedAddScreen from "@/components/screens/ExcitedAddScreen";
+import UnexpectedScreen from "@/components/screens/UnexpectedScreen";
 import OutfitScreen from "@/components/screens/OutfitScreen";
 import TravelScreen from "@/components/screens/TravelScreen";
 import ReviewScreen from "@/components/screens/ReviewScreen";
@@ -38,10 +40,12 @@ export default function Home() {
             {step === 1 && <VerificationScreen onNext={nextStep} />}
             {step === 2 && <WelcomeScreen onNext={nextStep} />}
             {step === 3 && <TimelineScreen onNext={nextStep} />}
-            {step === 4 && <OutfitScreen onNext={nextStep} />}
-            {step === 5 && <TravelScreen onNext={nextStep} />}
-            {step === 6 && <ReviewScreen onNext={nextStep} />}
-            {step === 7 && <FinalScreen />}
+            {step === 4 && <ExcitedAddScreen onNext={nextStep} />}
+            {step === 5 && <UnexpectedScreen onNext={nextStep} />}
+            {step === 6 && <OutfitScreen onNext={nextStep} />}
+            {step === 7 && <TravelScreen onNext={nextStep} />}
+            {step === 8 && <ReviewScreen onNext={nextStep} />}
+            {step === 9 && <FinalScreen />}
           </motion.div>
         </AnimatePresence>
       </div>

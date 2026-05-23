@@ -33,7 +33,7 @@ export default function TimelineScreen({ onNext }: { onNext: () => void }) {
       color: "bg-pink-500",
       content: [
         "You will purchase me an ice cream.",
-        "Unfortunately this is mandatory by international friendship law ⚖️"
+        "Unfortunately this is mandatory by international best friendship law, Section 42, Paragraph 9: Under no circumstances can you deny your bestie an ice cream 🍦⚖️"
       ],
       gif: "https://media.tenor.com/zc5tGYgASGUAAAAC/icecream-national-chocolate-ice-cream-day.gif"
     },

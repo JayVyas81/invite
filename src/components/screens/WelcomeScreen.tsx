@@ -30,7 +30,7 @@ export default function WelcomeScreen({ onNext }: { onNext: () => void }) {
           <motion.p 
             initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 1 }}
           >
-            Thank you for being my friend 😊
+            Thank you for being my absolute best friend 😊
           </motion.p>
           
           <motion.p 
@@ -42,7 +42,7 @@ export default function WelcomeScreen({ onNext }: { onNext: () => void }) {
           <motion.p 
             initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 3 }}
           >
-            I had two plans in mind, but since you're going to Central London with your friend, we'll save one adventure for later.
+            I had two plans in mind, but since you're going to Central London with your *other* best friend (who isn't as cool as me, obviously) 😜, we'll save one adventure for later.
           </motion.p>
           
           <motion.p 

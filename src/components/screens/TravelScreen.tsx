@@ -29,7 +29,7 @@ export default function TravelScreen({ onNext }: { onNext: () => void }) {
     if (progress < 25) {
       setMessage("🤖 Retinal scan in progress...");
     } else if (progress < 50) {
-      setMessage("✨ Alert: Extremely high levels of cuteness detected!");
+      setMessage("✨ Alert: Extremely high levels of gossip energy detected!");
     } else if (progress < 75) {
       setMessage("🐦 Analyzing pigeon-brain intelligence index...");
     } else if (progress < 100) {
@@ -142,7 +142,7 @@ export default function TravelScreen({ onNext }: { onNext: () => void }) {
                   <CheckCircle size={20} />
                   VIP Status Granted!
                 </div>
-                <p className="text-sm font-bold text-gray-600 dark:text-gray-300">Cuteness score: 999999/10</p>
+                <p className="text-sm font-bold text-gray-600 dark:text-gray-300">Gossip energy score: 999999/10</p>
               </motion.div>
             )}
 
