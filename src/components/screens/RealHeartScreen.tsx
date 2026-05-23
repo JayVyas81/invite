@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Heart, HeartCrack } from "lucide-react";
 
 export default function RealHeartScreen({ onNext }: { onNext: () => void }) {
   return (
@@ -29,8 +29,8 @@ export default function RealHeartScreen({ onNext }: { onNext: () => void }) {
         <h1 className="text-2xl md:text-3xl font-black mb-4 text-red-500 dark:text-red-400 drop-shadow-sm leading-relaxed">
           Jab tumne bola ki achhe se invite nai kiya...
         </h1>
-        <p className="text-xl md:text-2xl font-bold mb-6 text-gray-800 dark:text-white">
-          To idhar lag gai... 💔🥺
+        <p className="text-xl md:text-2xl font-bold mb-6 text-gray-800 dark:text-white flex items-center justify-center gap-2">
+          To idhar lag gai... <HeartCrack className="text-red-500 animate-pulse" size={28} /> 🥺
         </p>
         <p className="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">
           To mene ye banaya he tere liye <span className="text-pink-500 font-extrabold">special invitation ✨</span>
