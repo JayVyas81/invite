@@ -77,28 +77,30 @@ export default function TimelineScreen({ onNext }: { onNext: () => void }) {
               </div>
 
               {/* Card */}
-              <div className="glass-card p-6 md:p-8 rounded-3xl shadow-xl transform transition-transform hover:scale-[1.02]">
-                <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100 flex items-center justify-between">
-                  {step.title}
-                  <div className="w-16 h-16 ml-4 flex-shrink-0 rounded-xl overflow-hidden border-2 border-gray-200 shadow-md">
-                    <img src={step.gif} alt="Funny Reaction" className="w-full h-full object-cover" />
-                  </div>
-                </h2>
-                <ul className="space-y-3">
-                  {step.content.map((text, i) => (
-                    <motion.li 
-                      key={i}
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: 0.3 + (i * 0.1) }}
-                      className="text-lg text-gray-700 dark:text-gray-300 flex items-start"
-                    >
-                      <span className="mr-2 mt-1 text-pink-500">•</span>
-                      {text}
-                    </motion.li>
-                  ))}
-                </ul>
+              <div className="glass-card p-6 md:p-8 rounded-3xl shadow-xl transform transition-transform hover:scale-[1.02] flex flex-col sm:flex-row gap-6 items-center sm:items-start text-left">
+                <div className="flex-1 w-full">
+                  <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-gray-100 flex items-center justify-between">
+                    {step.title}
+                  </h2>
+                  <ul className="space-y-3">
+                    {step.content.map((text, i) => (
+                      <motion.li 
+                        key={i}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.3 + (i * 0.1) }}
+                        className="text-lg text-gray-700 dark:text-gray-300 flex items-start"
+                      >
+                        <span className="mr-2 mt-1 text-pink-500">•</span>
+                        {text}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="w-32 h-32 md:w-36 md:h-36 rounded-2xl overflow-hidden border-4 border-pink-400 dark:border-pink-600 shadow-xl flex-shrink-0 mx-auto sm:mx-0">
+                  <img src={step.gif} alt="Funny Reaction" className="w-full h-full object-cover" />
+                </div>
               </div>
             </motion.div>
           ))}
